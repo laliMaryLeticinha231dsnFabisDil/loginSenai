@@ -28,7 +28,7 @@ export default function Acesso() {
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <View style={styles.container}>
                     <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
-                        <Text style={styles.message}>Bem-vindo(a)</Text>
+                        <Text style={styles.message}>Cadastrar-se</Text>
                     </Animatable.View>
                     <Animatable.View animation="fadeInUp" style={styles.containerForm}>
                         <Text style={styles.title}>E-mail</Text>
@@ -46,11 +46,19 @@ export default function Acesso() {
                             value={senha}
                             secureTextEntry
                         />
+                        <Text style={styles.title}>Senha</Text>
+                        <TextInput
+                            placeholder='Confirme sua senha'
+                            style={styles.input}
+                            onChangeText={setSenha}
+                            value={senha}
+                            secureTextEntry
+                        />
                         <TouchableOpacity style={styles.button} onPress={handleLogin}>
                             <Text style={styles.buttonText}>Acessar</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity  onPress={() => navigation.navigate('cadastro')} style={styles.buttonRegister}>
-                            <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
+                        <TouchableOpacity  onPress={() => navigation.navigate('entrada')} style={styles.buttonRegister}>
+                            <Text style={styles.registerText}>Já possui uma conta? Clique aqui para entrar</Text>
                         </TouchableOpacity>
                          <TouchableOpacity  style={styles.button} onPress={() => navigation.navigate('index')}>
                             <Text style={styles.buttonVoltar}>Voltar ao inicio</Text>
